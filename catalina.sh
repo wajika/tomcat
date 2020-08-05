@@ -158,8 +158,8 @@ PRGDIR=`dirname "$PRG"`
 [ -z "$CATALINA_BASE" ] && CATALINA_BASE="$CATALINA_HOME"
 
 
-JAVA_OPTS="-javaagent:/home/wjk/elastic-apm-agent-1.18.0.RC1.jar \
-      -Delastic.apm.service_name=my-application \
+JAVA_OPTS="-javaagent:/usr/local/tomcat/elastic-apm-agent-1.18.0.RC1.jar \
+      -Delastic.apm.service_name=tomcat-docker \
       -Delastic.apm.server_url=http://192.168.10.145:8200 \
       -Delastic.apm.application_packages=org.example"
 
