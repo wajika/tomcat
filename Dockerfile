@@ -119,6 +119,10 @@ RUN set -eux; \
 	chmod -R +rX .; \
 	chmod 777 logs temp work
 
+COPY ./catalina.sh /usr/local/tomcat/bin/catalina.sh
+COPY ./elastic-apm-agent-1.18.0.RC1.jar /usr/local/tomcat/elastic-apm-agent-1.18.0.RC1.jar
+
+
 # verify Tomcat Native is working properly
 RUN set -e \
 	&& nativeLines="$(catalina.sh configtest 2>&1)" \
